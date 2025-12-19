@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Mic, MicOff, Waves, X, Activity } from 'lucide-react';
 import { GoogleGenAI, Modality } from '@google/genai';
-import secrets from '../secrets.json';
+
 
 const SYSTEM_INSTRUCTION = `
 MOST IMPORTANT DOCUMENT OF 2025: The Agentic Enterprise.
@@ -84,7 +84,18 @@ const VoiceSensoryAgent: React.FC = () => {
     setIsActive(true); // Open UI immediately to show logs
     addLog("Initializing session...");
     try {
-      const apiKey = secrets.GEMINI_API_KEY ||
+      let fetchedKey = '';
+      try {
+        const res = await fetch('/secrets.json');
+        if (res.ok) {
+          const data = await res.json();
+          fetchedKey = data.GEMINI_API_KEY || data.API_KEY || data.GOOGLE_API_KEY;
+        }
+      } catch (e) {
+        // File missing or invalid JSON
+      }
+
+      const apiKey = fetchedKey ||
         import.meta.env.VITE_GEMINI_API_KEY ||
         import.meta.env.VITE_GOOGLE_API_KEY;
 
