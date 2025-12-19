@@ -24,19 +24,7 @@ const ApplicationPortfolio: React.FC = () => {
         { label: "Mechanism", value: "Novel use of sovereign N8N engines for empirical data" }
       ]
     },
-    {
-      title: "Mistral AI Global Leaders",
-      subtitle: "Paris Cohort (Pending)",
-      icon: Globe,
-      color: "bg-yellow-500/10 border-yellow-500/20 text-yellow-400",
-      glow: "shadow-[0_0_30px_rgba(234,179,8,0.15)]",
-      status: "Application in Preparation",
-      quote: "Bridging foundational research and real-world impact. Deploying agentic workflows on high-performance open-source models.",
-      meta: [
-        { label: "Track", value: "Fine-tuning & Agentic Orchestration" },
-        { label: "Validation", value: "Moat.ai MVP & Smart Funnel Revenue" }
-      ]
-    },
+
     {
       title: "Oxford MSc AI for Business",
       subtitle: "Governance Structure",

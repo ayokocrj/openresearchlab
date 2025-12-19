@@ -184,162 +184,136 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
 
-        {/* MOBILE ONLY: STACKED NODE VIEW */}
-        <div className="lg:hidden space-y-4 pt-8">
-          {[
-            { label: "Trigger Node", sub: "Webhook_In", desc: "/api/v1/smart_funnel", icon: Zap, color: "text-white" },
-            { label: "AI Worker", sub: "Lead_Qualifier", desc: "gpt-4o-2024-05-13", icon: ShieldCheck, color: "text-indigo-400" },
-            { label: "Governance", sub: "The_Helmet", desc: "Audit_Trail: #88219", icon: ShieldAlert, color: "text-green-400" }
-          ].map((node, i) => (
-            <div key={i} className="bg-[#121212] border border-white/5 rounded-2xl p-6 flex items-center gap-6">
-              <div className={`w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center border border-white/5 ${node.color}`}>
-                <node.icon size={24} />
-              </div>
-              <div>
-                <div className="text-[9px] font-mono text-gray-500 uppercase tracking-widest mb-1">{node.label}</div>
-                <div className="font-bold text-white text-lg">{node.sub}</div>
-                <div className="text-[10px] font-mono text-gray-600">{node.desc}</div>
-              </div>
-            </div>
-          ))}
-          <div className="bg-indigo-900/10 border border-indigo-500/20 rounded-xl p-4 mt-6">
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></div>
-              <span className="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">Live_Reasoning_Chain</span>
-            </div>
-            <div className="h-1 bg-white/5 rounded-full overflow-hidden w-full">
-              <div className="h-full w-[60%] bg-indigo-500 rounded-full"></div>
-            </div>
-          </div>
-        </div>
+        {/* RIGHT COL: THE ENGINE VISUALIZATION (SCALED FOR MOBILE) */}
+        <div className="lg:col-span-7 h-[400px] md:h-[800px] relative perspective-[2000px] w-full overflow-hidden lg:overflow-visible group/viz">
+          {/* Scaling Container: Forces the 800px+ desktop layout to fit on mobile via scaling */}
+          <div className="absolute top-0 left-0 w-[850px] lg:w-full h-[800px] origin-top-left scale-[0.42] sm:scale-[0.6] lg:scale-100 transition-transform duration-500">
+            {/* Floating Glass Container */}
+            <div className="w-full h-full bg-[#080808]/80 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-2xl relative overflow-hidden transform md:rotate-y-[-2deg] transition-transform duration-1000 hover:rotate-y-[0deg]">
 
-        {/* RIGHT COL: THE ENGINE VISUALIZATION (HIGH DEPTH) - DESKTOP ONLY */}
-        <div className="hidden lg:block lg:col-span-7 h-[800px] relative perspective-[2000px]">
-          {/* Floating Glass Container */}
-          <div className="w-full h-full bg-[#080808]/80 backdrop-blur-xl border border-white/10 rounded-[2rem] shadow-2xl relative overflow-hidden transform rotate-y-[-2deg] transition-transform duration-1000 hover:rotate-y-[0deg]">
-
-            {/* UI Header */}
-            <div className="h-16 border-b border-white/5 flex items-center justify-between px-8 bg-black/20">
-              <div className="flex items-center gap-4">
-                <div className="flex gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#27C93F]"></div>
-                </div>
-                <div className="h-6 w-[1px] bg-white/10 mx-4"></div>
-                <div className="flex flex-col">
-                  <span className="text-[10px] font-bold text-white uppercase tracking-widest">Nodebase_Engine</span>
-                  <span className="text-[8px] font-mono text-gray-500">v1.5.0 (Sovereign)</span>
-                </div>
-              </div>
-              <div className="px-3 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded text-[9px] text-indigo-400 font-mono tracking-wider flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse"></div>
-                LIVE_CONNECTION
-              </div>
-            </div>
-
-            {/* Main Canvas */}
-            <div className="absolute inset-0 top-16 bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:20px_20px]">
-
-              {/* Blurred Distant Nodes (Parallax Layer) */}
-              <div className="absolute inset-0 pointer-events-none opacity-20 blur-[2px] scale-90">
-                <div className="absolute top-[200px] right-[100px] w-40 h-24 bg-white/5 border border-white/5 rounded-xl"></div>
-                <div className="absolute bottom-[100px] left-[100px] w-32 h-20 bg-white/5 border border-white/5 rounded-xl"></div>
-              </div>
-
-              {/* Grid Lines */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30">
-                <defs>
-                  <linearGradient id="grid-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#6366f1" stopOpacity="0" />
-                    <stop offset="50%" stopColor="#6366f1" stopOpacity="0.2" />
-                    <stop offset="100%" stopColor="#6366f1" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <line x1="0" y1="300" x2="1000" y2="300" stroke="url(#grid-grad)" strokeWidth="1" />
-                <line x1="0" y1="500" x2="1000" y2="500" stroke="url(#grid-grad)" strokeWidth="1" />
-              </svg>
-
-              {/* Connection Paths */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
-                <path d="M180 300 C 250 300, 250 300, 320 300" stroke="white" strokeWidth="2" strokeOpacity="0.1" fill="none" />
-                <path d="M480 300 C 550 300, 550 400, 620 500" stroke="white" strokeWidth="2" strokeOpacity="0.1" fill="none" />
-
-                {/* Animated Data Packets */}
-                <circle r="3" fill="#6366f1">
-                  <animateMotion dur="3s" repeatCount="indefinite" path="M180 300 C 250 300, 250 300, 320 300" />
-                </circle>
-                <circle r="3" fill="#6366f1">
-                  <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M480 300 C 550 300, 550 400, 620 500" />
-                </circle>
-              </svg>
-
-              {/* ACTIVE NODES */}
-
-              {/* Node 1: Webhook */}
-              <div className="absolute top-[260px] left-[60px] w-48 bg-[#0F0F0F] border border-white/10 rounded-xl shadow-2xl p-5 hover:border-indigo-500/50 transition-colors cursor-pointer group/node">
-                <div className="absolute -top-3 left-4 px-2 py-0.5 bg-[#0F0F0F] border border-white/10 rounded text-[9px] text-gray-400 font-mono tracking-wider uppercase font-bold group-hover/node:text-indigo-400 group-hover/node:border-indigo-500/50 transition-colors">Trigger</div>
-                <div className="flex justify-between items-center mb-4 mt-2">
-                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                    <Zap size={18} className="text-white/40 group-hover/node:text-indigo-400 transition-colors" />
+              {/* UI Header */}
+              <div className="h-16 border-b border-white/5 flex items-center justify-between px-8 bg-black/20">
+                <div className="flex items-center gap-4">
+                  <div className="flex gap-2">
+                    <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                    <div className="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                  </div>
+                  <div className="h-6 w-[1px] bg-white/10 mx-4"></div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-bold text-white uppercase tracking-widest">Nodebase_Engine</span>
+                    <span className="text-[8px] font-mono text-gray-500">v1.5.0 (Sovereign)</span>
                   </div>
                 </div>
-                <div className="font-bold text-sm text-gray-200">Webhook_In</div>
-                <div className="text-[10px] font-mono text-gray-600 mt-1">/api/v1/smart_funnel</div>
+                <div className="px-3 py-1.5 bg-indigo-500/10 border border-indigo-500/20 rounded text-[9px] text-indigo-400 font-mono tracking-wider flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 bg-indigo-500 rounded-full animate-pulse"></div>
+                  LIVE_CONNECTION
+                </div>
               </div>
 
-              {/* Node 2: The Agent (Central) */}
-              <div className="absolute top-[240px] left-[320px] w-64 bg-[#121212] border border-indigo-500/30 rounded-2xl shadow-[0_0_50px_rgba(99,102,241,0.1)] p-6 z-20 hover:scale-105 transition-transform duration-300">
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-indigo-600 rounded-full text-[10px] text-white font-bold tracking-widest shadow-lg shadow-indigo-500/30">AI_WORKER</div>
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center border border-indigo-500/30 shadow-inner">
-                    <ShieldCheck size={24} className="text-indigo-400" />
-                  </div>
-                  <div>
-                    <div className="font-bold text-white text-lg">Lead_Qualifier</div>
-                    <div className="text-[10px] font-mono text-indigo-400">gpt-4o-2024-05-13</div>
-                  </div>
+              {/* Main Canvas */}
+              <div className="absolute inset-0 top-16 bg-[radial-gradient(#1a1a1a_1px,transparent_1px)] [background-size:20px_20px]">
+
+                {/* Blurred Distant Nodes (Parallax Layer) */}
+                <div className="absolute inset-0 pointer-events-none opacity-20 blur-[2px] scale-90">
+                  <div className="absolute top-[200px] right-[100px] w-40 h-24 bg-white/5 border border-white/5 rounded-xl"></div>
+                  <div className="absolute bottom-[100px] left-[100px] w-32 h-20 bg-white/5 border border-white/5 rounded-xl"></div>
                 </div>
-                <div className="space-y-2">
-                  {/* Context Visualizer */}
-                  <div className="bg-black/40 rounded-lg p-3 border border-white/5 space-y-2">
-                    <div className="flex justify-between text-[9px] text-gray-500 uppercase font-mono">
-                      <span>Context_Window</span>
-                      <span className="text-white">14.2k / 128k</span>
-                    </div>
-                    <div className="h-1 bg-white/10 rounded-full overflow-hidden">
-                      <div className="h-full w-[12%] bg-indigo-500"></div>
+
+                {/* Grid Lines */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-30">
+                  <defs>
+                    <linearGradient id="grid-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#6366f1" stopOpacity="0" />
+                      <stop offset="50%" stopColor="#6366f1" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="#6366f1" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <line x1="0" y1="300" x2="1000" y2="300" stroke="url(#grid-grad)" strokeWidth="1" />
+                  <line x1="0" y1="500" x2="1000" y2="500" stroke="url(#grid-grad)" strokeWidth="1" />
+                </svg>
+
+                {/* Connection Paths */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
+                  <path d="M180 300 C 250 300, 250 300, 320 300" stroke="white" strokeWidth="2" strokeOpacity="0.1" fill="none" />
+                  <path d="M480 300 C 550 300, 550 400, 620 500" stroke="white" strokeWidth="2" strokeOpacity="0.1" fill="none" />
+
+                  {/* Animated Data Packets */}
+                  <circle r="3" fill="#6366f1">
+                    <animateMotion dur="3s" repeatCount="indefinite" path="M180 300 C 250 300, 250 300, 320 300" />
+                  </circle>
+                  <circle r="3" fill="#6366f1">
+                    <animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M480 300 C 550 300, 550 400, 620 500" />
+                  </circle>
+                </svg>
+
+                {/* ACTIVE NODES */}
+
+                {/* Node 1: Webhook */}
+                <div className="absolute top-[260px] left-[60px] w-48 bg-[#0F0F0F] border border-white/10 rounded-xl shadow-2xl p-5 hover:border-indigo-500/50 transition-colors cursor-pointer group/node">
+                  <div className="absolute -top-3 left-4 px-2 py-0.5 bg-[#0F0F0F] border border-white/10 rounded text-[9px] text-gray-400 font-mono tracking-wider uppercase font-bold group-hover/node:text-indigo-400 group-hover/node:border-indigo-500/50 transition-colors">Trigger</div>
+                  <div className="flex justify-between items-center mb-4 mt-2">
+                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+                      <Zap size={18} className="text-white/40 group-hover/node:text-indigo-400 transition-colors" />
                     </div>
                   </div>
-                  <div className="flex justify-between items-center pt-2">
-                    <span className="text-[10px] text-gray-500 font-mono">Status:</span>
-                    <span className="text-[10px] text-green-400 font-mono animate-pulse">Running_Reasoning_Chain...</span>
+                  <div className="font-bold text-sm text-gray-200">Webhook_In</div>
+                  <div className="text-[10px] font-mono text-gray-600 mt-1">/api/v1/smart_funnel</div>
+                </div>
+
+                {/* Node 2: The Agent (Central) */}
+                <div className="absolute top-[240px] left-[320px] w-64 bg-[#121212] border border-indigo-500/30 rounded-2xl shadow-[0_0_50px_rgba(99,102,241,0.1)] p-6 z-20 hover:scale-105 transition-transform duration-300">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-3 py-1 bg-indigo-600 rounded-full text-[10px] text-white font-bold tracking-widest shadow-lg shadow-indigo-500/30">AI_WORKER</div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center border border-indigo-500/30 shadow-inner">
+                      <ShieldCheck size={24} className="text-indigo-400" />
+                    </div>
+                    <div>
+                      <div className="font-bold text-white text-lg">Lead_Qualifier</div>
+                      <div className="text-[10px] font-mono text-indigo-400">gpt-4o-2024-05-13</div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    {/* Context Visualizer */}
+                    <div className="bg-black/40 rounded-lg p-3 border border-white/5 space-y-2">
+                      <div className="flex justify-between text-[9px] text-gray-500 uppercase font-mono">
+                        <span>Context_Window</span>
+                        <span className="text-white">14.2k / 128k</span>
+                      </div>
+                      <div className="h-1 bg-white/10 rounded-full overflow-hidden">
+                        <div className="h-full w-[12%] bg-indigo-500"></div>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center pt-2">
+                      <span className="text-[10px] text-gray-500 font-mono">Status:</span>
+                      <span className="text-[10px] text-green-400 font-mono animate-pulse">Running_Reasoning_Chain...</span>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Node 3: Governance */}
-              <div className="absolute top-[440px] left-[620px] w-52 bg-[#0F0F0F] border border-white/10 rounded-xl shadow-2xl p-5 hover:border-green-500/50 transition-colors cursor-pointer group/node">
-                <div className="absolute -top-3 left-4 px-2 py-0.5 bg-[#0F0F0F] border border-white/10 rounded text-[9px] text-gray-400 font-mono tracking-wider uppercase font-bold group-hover/node:text-green-400 group-hover/node:border-green-500/50 transition-colors">The_Helmet</div>
-                <div className="flex justify-between items-center mb-4 mt-2">
-                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                    <ShieldAlert size={18} className="text-white/40 group-hover/node:text-green-400 transition-colors" />
+                {/* Node 3: Governance */}
+                <div className="absolute top-[440px] left-[620px] w-52 bg-[#0F0F0F] border border-white/10 rounded-xl shadow-2xl p-5 hover:border-green-500/50 transition-colors cursor-pointer group/node">
+                  <div className="absolute -top-3 left-4 px-2 py-0.5 bg-[#0F0F0F] border border-white/10 rounded text-[9px] text-gray-400 font-mono tracking-wider uppercase font-bold group-hover/node:text-green-400 group-hover/node:border-green-500/50 transition-colors">The_Helmet</div>
+                  <div className="flex justify-between items-center mb-4 mt-2">
+                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
+                      <ShieldAlert size={18} className="text-white/40 group-hover/node:text-green-400 transition-colors" />
+                    </div>
                   </div>
+                  <div className="font-bold text-sm text-gray-200">Governance_Log</div>
+                  <div className="text-[10px] font-mono text-gray-600 mt-1">Audit_Trail: #88219</div>
                 </div>
-                <div className="font-bold text-sm text-gray-200">Governance_Log</div>
-                <div className="text-[10px] font-mono text-gray-600 mt-1">Audit_Trail: #88219</div>
-              </div>
 
-              {/* Code Snippet Overlay (Decoration) */}
-              <div className="absolute top-10 right-10 w-64 bg-black/80 backdrop-blur-md border border-white/10 rounded-lg p-4 font-mono text-[9px] text-gray-500 leading-relaxed pointer-events-none opacity-60">
-                <div className="mb-2 text-white/20 border-b border-white/5 pb-1">src/agents/negotiator.ts</div>
-                <span className="text-purple-400">const</span> <span className="text-blue-400">decision</span> = <span className="text-purple-400">await</span> agent.<span className="text-yellow-400">run</span>(&#123;<br />
-                &nbsp;&nbsp;context: <span className="text-green-400">'smart_funnel'</span>,<br />
-                &nbsp;&nbsp;guardrails: <span className="text-blue-400">true</span>,<br />
-                &nbsp;&nbsp;model: <span className="text-green-400">'claude-3-5-sonnet'</span><br />
-                &#125;);
-              </div>
+                {/* Code Snippet Overlay (Decoration) */}
+                <div className="absolute top-10 right-10 w-64 bg-black/80 backdrop-blur-md border border-white/10 rounded-lg p-4 font-mono text-[9px] text-gray-500 leading-relaxed pointer-events-none opacity-60">
+                  <div className="mb-2 text-white/20 border-b border-white/5 pb-1">src/agents/negotiator.ts</div>
+                  <span className="text-purple-400">const</span> <span className="text-blue-400">decision</span> = <span className="text-purple-400">await</span> agent.<span className="text-yellow-400">run</span>(&#123;<br />
+                  &nbsp;&nbsp;context: <span className="text-green-400">'smart_funnel'</span>,<br />
+                  &nbsp;&nbsp;guardrails: <span className="text-blue-400">true</span>,<br />
+                  &nbsp;&nbsp;model: <span className="text-green-400">'claude-3-5-sonnet'</span><br />
+                  &#125;);
+                </div>
 
+              </div>
             </div>
           </div>
         </div>
@@ -538,32 +512,32 @@ const Dashboard: React.FC = () => {
       </section>
 
       {/* 7. FIELD NOTES: BROADCASTING THE EXPERIMENT */}
-      <section className="py-48">
+      <section className="py-24 md:py-48">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col lg:flex-row justify-between items-end mb-40 gap-16">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-20 md:mb-40 gap-10 md:gap-16">
             <div className="max-w-2xl">
-              <span className="mono text-[10px] text-white/40 uppercase tracking-[0.8em] font-black block mb-10">Public_Scholarship</span>
-              <h3 className="text-6xl font-bold uppercase tracking-tighter text-silver leading-[0.85] italic">Broadcasting <br />the Experiment.</h3>
+              <span className="mono text-[10px] text-white/40 uppercase tracking-[0.8em] font-black block mb-6 md:mb-10">Public_Scholarship</span>
+              <h3 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter text-silver leading-[0.85] italic">Broadcasting <br />the Experiment.</h3>
             </div>
-            <p className="text-gray-500 text-3xl max-w-md border-l-2 border-white/10 pl-16 font-light leading-tight tracking-tighter">
+            <p className="text-gray-500 text-xl md:text-3xl max-w-md border-l-2 border-white/10 pl-8 md:pl-16 font-light leading-tight tracking-tighter mt-8 lg:mt-0">
               A Research Lab must publish to influence the standard. We document the messy reality of the <span className="text-white">Jagged Frontier</span>.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
             {[
               { type: "Empirical_Note", title: "The Day the Router Failed: Lessons from the Jagged Frontier", icon: BookOpen, date: "Q4_2024" },
               { type: "Technical_SOP", title: "Open Sourcing the Governance Node and Audit Logic", icon: Terminal, date: "Q4_2024" },
               { type: "Case_Study", title: "Bicycle for the SME: Operational Proof of Agentic ROI", icon: Search, date: "Q1_2025" }
             ].map((n, i) => (
-              <div key={i} className="group cursor-pointer flex flex-col h-full bg-white/5 p-8 md:p-16 rounded-[3.5rem] border border-white/5 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-700 hover:shadow-2xl">
-                <div className="aspect-square bg-black border border-white/10 rounded-3xl mb-16 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-all duration-700">
-                  <n.icon size={80} className="text-white/10 group-hover:text-white transition-all duration-700 opacity-40 group-hover:opacity-100" />
-                  <div className="absolute top-10 right-10 mono text-[10px] text-white/30 font-black tracking-widest">{n.date}</div>
+              <div key={i} className="group cursor-pointer flex flex-col h-full bg-white/5 p-8 md:p-16 rounded-[2.5rem] md:rounded-[3.5rem] border border-white/5 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-700 hover:shadow-2xl">
+                <div className="aspect-square bg-black border border-white/10 rounded-3xl mb-10 md:mb-16 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-all duration-700">
+                  <n.icon size={80} className="text-white/10 group-hover:text-white transition-all duration-700 opacity-40 group-hover:opacity-100 scale-75 md:scale-100" />
+                  <div className="absolute top-6 right-6 md:top-10 md:right-10 mono text-[9px] md:text-[10px] text-white/30 font-black tracking-widest">{n.date}</div>
                 </div>
-                <span className="mono text-[10px] text-indigo-400 uppercase font-black block mb-8 tracking-[0.6em]">{n.type}</span>
-                <h4 className="text-4xl font-bold leading-[1.05] group-hover:text-silver transition-all pr-12 tracking-tighter italic">{n.title}</h4>
-                <div className="mt-auto pt-12 flex items-center gap-4">
+                <span className="mono text-[9px] md:text-[10px] text-indigo-400 uppercase font-black block mb-6 md:mb-8 tracking-[0.6em]">{n.type}</span>
+                <h4 className="text-2xl md:text-4xl font-bold leading-[1.05] group-hover:text-silver transition-all pr-4 md:pr-12 tracking-tighter italic">{n.title}</h4>
+                <div className="mt-auto pt-8 md:pt-12 flex items-center gap-4">
                   <div className="w-12 h-[1.5px] bg-white/20 group-hover:w-full transition-all duration-1000"></div>
                   <ArrowUpRight size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
@@ -574,18 +548,18 @@ const Dashboard: React.FC = () => {
       </section>
 
       {/* 8. THE COALITION: THE ASK */}
-      <section className="py-72 bg-white text-black relative overflow-hidden group">
+      <section className="py-24 md:py-72 bg-white text-black relative overflow-hidden group">
         <div className="absolute inset-0 opacity-[0.08] pointer-events-none flex items-center justify-center">
           <Binary size={1200} className="text-black group-hover:rotate-12 group-hover:scale-110 transition-all duration-1500" />
         </div>
         <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
-          <h3 className="text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-20 leading-[0.8] italic">
+          <h3 className="text-4xl md:text-5xl lg:text-7xl font-bold uppercase tracking-tighter mb-12 md:mb-20 leading-[0.9] md:leading-[0.8] italic">
             A Call for <br />Principal Investigators.
           </h3>
-          <p className="text-4xl text-black/60 mb-24 max-w-3xl mx-auto leading-[1.1] font-light tracking-tighter italic">
+          <p className="text-xl md:text-4xl text-black/60 mb-16 md:mb-24 max-w-3xl mx-auto leading-[1.2] md:leading-[1.1] font-light tracking-tighter italic">
             We have the engine. We have the data. We have the ambition. We are seeking partners to lead this "Experimentation Platform" into a full-scale research program.
           </p>
-          <button className="bg-black text-white px-24 py-10 rounded-full font-black text-3xl hover:bg-neutral-900 transition-all shadow-[0_40px_100px_rgba(0,0,0,0.4)] uppercase tracking-[0.4em] italic">
+          <button className="bg-black text-white px-10 py-6 md:px-24 md:py-10 rounded-full font-black text-sm md:text-3xl hover:bg-neutral-900 transition-all shadow-[0_40px_100px_rgba(0,0,0,0.4)] uppercase tracking-[0.2em] md:tracking-[0.4em] italic whitespace-nowrap">
             Request Dossier
           </button>
         </div>
