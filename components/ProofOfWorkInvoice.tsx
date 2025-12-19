@@ -26,7 +26,7 @@ const ProofOfWorkInvoice: React.FC<{ className?: string }> = ({ className = '' }
                     <div className="flex justify-between items-start gap-4">
                         <div>
                             <div className="text-[9px] font-mono text-gray-500 uppercase tracking-wider mb-1">Issuer_Node</div>
-                            <div className="font-bold text-xs text-white leading-tight">Roland Caryl Jr.</div>
+                            <div className="font-bold text-xs text-white leading-tight">Senior Partner</div>
                             <div className="text-[10px] text-gray-400">Bento AI Services</div>
                         </div>
                         <div className="text-right">

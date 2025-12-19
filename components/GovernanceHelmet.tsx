@@ -232,12 +232,12 @@ const GovernanceHelmet: React.FC = () => {
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Roland's Queue (4 cols) */}
+        {/* RIGHT COLUMN: Priority Queue (4 cols) */}
         <div className="lg:col-span-4 flex flex-col h-[500px] bg-gray-900 border border-gray-800 rounded-2xl overflow-hidden">
           <div className="p-4 border-b border-gray-800 bg-gray-800/50 flex justify-between items-center">
             <h3 className="font-bold text-sm text-white flex items-center gap-2">
               <User size={16} />
-              Roland's Queue
+              Priority Queue
             </h3>
             <span className="bg-yellow-500 text-black text-xs font-bold px-2 py-1 rounded-full">{queue.length}</span>
           </div>
