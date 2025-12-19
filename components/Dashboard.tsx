@@ -344,12 +344,10 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
 
-    </div>
-        </div >
-      </section >
+      </section>
 
-  {/* 4. THE PIVOT: FROM TOOLING TO OPERATIONS */ }
-  < section className = "min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-black border-y border-white/5" >
+      {/* 4. THE PIVOT: FROM TOOLING TO OPERATIONS */}
+      <section className="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-black border-y border-white/5">
         <div className="bg-[#f0f0f0] text-black p-8 md:p-24 flex flex-col justify-center">
           <span className="mono text-[10px] font-black uppercase tracking-[0.8em] mb-8 text-black/40">The Legacy State</span>
           <h3 className="text-4xl md:text-6xl font-bold tracking-tighter uppercase mb-6 md:mb-10 leading-[0.9] md:leading-[0.8] italic pr-0 md:pr-24">The <br />Wrapper <br />Trap.</h3>
@@ -367,216 +365,216 @@ const Dashboard: React.FC = () => {
           </p>
           <div className="w-40 h-[1.5px] bg-white/10"></div>
         </div>
-      </section >
+      </section>
 
-  {/* 5. METHODOLOGY: THE TRANSFORMATION PYRAMID */ }
-  < section className = "py-24 md:py-48 relative overflow-hidden" >
-    <div className="max-w-6xl mx-auto px-6 text-center">
-      <span className="mono text-[10px] text-white/40 uppercase tracking-[0.8em] font-black block mb-12">The_Execution_Framework</span>
-      <h3 className="text-4xl md:text-6xl md:text-7xl font-bold uppercase tracking-tight mb-20 md:mb-40 text-silver italic leading-none px-0 md:px-8">Transformation Pyramid</h3>
+      {/* 5. METHODOLOGY: THE TRANSFORMATION PYRAMID */}
+      <section className="py-24 md:py-48 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <span className="mono text-[10px] text-white/40 uppercase tracking-[0.8em] font-black block mb-12">The_Execution_Framework</span>
+          <h3 className="text-4xl md:text-6xl md:text-7xl font-bold uppercase tracking-tight mb-20 md:mb-40 text-silver italic leading-none px-0 md:px-8">Transformation Pyramid</h3>
 
-      <div className="relative flex flex-col items-center">
-        {[
-          { label: "04 Innovation", sub: "Business Model: The Post-Labor Corp", color: "bg-white text-black border-white shadow-[0_0_60px_rgba(255,255,255,0.1)]", w: "w-full max-w-56", h: "min-h-28" },
-          { label: "03 Execution", sub: "Process Automation: Active SME Ops", color: "bg-neutral-200 text-black border-neutral-200", w: "w-full max-w-[400px]", h: "min-h-32" },
-          { label: "02 Enabler", sub: "Infrastructure: Sovereign Agent Engine", color: "bg-neutral-500 text-black border-neutral-500", w: "w-full max-w-[650px]", h: "min-h-36" },
-          { label: "01 Foundation", sub: "Culture: The Lab SOP Mindset", color: "bg-neutral-800 text-white border-neutral-800", w: "w-full max-w-[900px]", h: "min-h-44" }
-        ].map((layer, idx) => (
-          <div key={idx} className={`${layer.w} ${layer.h} ${layer.color} border flex flex-col items-center justify-center transition-all duration-500 hover:scale-[1.04] hover:z-30 cursor-default group relative shadow-2xl p-6`}>
-            <span className="text-[11px] mono uppercase tracking-[0.4em] font-black opacity-40 mb-3">{layer.label}</span>
-            <span className="font-bold text-xl md:text-2xl uppercase tracking-tighter italic text-center leading-tight">{layer.sub}</span>
-            {idx === 0 && (
-              <div className="absolute -top-32 left-1/2 -translate-x-1/2 flex flex-col items-center">
-                <span className="text-[10px] font-black text-white mono animate-pulse tracking-[0.5em] uppercase whitespace-nowrap">Target_Innovation_Zone</span>
-                <div className="w-[1.5px] h-16 bg-white/40 mt-4"></div>
+          <div className="relative flex flex-col items-center">
+            {[
+              { label: "04 Innovation", sub: "Business Model: The Post-Labor Corp", color: "bg-white text-black border-white shadow-[0_0_60px_rgba(255,255,255,0.1)]", w: "w-full max-w-56", h: "min-h-28" },
+              { label: "03 Execution", sub: "Process Automation: Active SME Ops", color: "bg-neutral-200 text-black border-neutral-200", w: "w-full max-w-[400px]", h: "min-h-32" },
+              { label: "02 Enabler", sub: "Infrastructure: Sovereign Agent Engine", color: "bg-neutral-500 text-black border-neutral-500", w: "w-full max-w-[650px]", h: "min-h-36" },
+              { label: "01 Foundation", sub: "Culture: The Lab SOP Mindset", color: "bg-neutral-800 text-white border-neutral-800", w: "w-full max-w-[900px]", h: "min-h-44" }
+            ].map((layer, idx) => (
+              <div key={idx} className={`${layer.w} ${layer.h} ${layer.color} border flex flex-col items-center justify-center transition-all duration-500 hover:scale-[1.04] hover:z-30 cursor-default group relative shadow-2xl p-6`}>
+                <span className="text-[11px] mono uppercase tracking-[0.4em] font-black opacity-40 mb-3">{layer.label}</span>
+                <span className="font-bold text-xl md:text-2xl uppercase tracking-tighter italic text-center leading-tight">{layer.sub}</span>
+                {idx === 0 && (
+                  <div className="absolute -top-32 left-1/2 -translate-x-1/2 flex flex-col items-center">
+                    <span className="text-[10px] font-black text-white mono animate-pulse tracking-[0.5em] uppercase whitespace-nowrap">Target_Innovation_Zone</span>
+                    <div className="w-[1.5px] h-16 bg-white/40 mt-4"></div>
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        ))}
-      </div>
-
-      {/* New Section: Strategic Acquisitions Pipeline */}
-      <div className="mt-40 border-t border-white/10 pt-20">
-        <span className="mono text-[10px] text-indigo-400 uppercase tracking-[0.8em] font-black block mb-20 animate-pulse">Active_Acquisitions_Pipeline</span>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-          {/* Asset 01 */}
-          <div className="p-10 bg-white/5 border border-white/10 rounded-3xl hover:border-indigo-500/50 transition-all group hover:-translate-y-2 duration-500">
-            <div className="flex justify-between items-start mb-8">
-              <span className="mono text-[9px] text-white/30 uppercase tracking-widest group-hover:text-indigo-400 transition-colors">Asset_01 // Nodebase_Core</span>
-              <Terminal size={20} className="text-white/20 group-hover:text-indigo-400 transition-colors" />
-            </div>
-            <h4 className="text-2xl font-bold text-white mb-3 italic">Workflow Engine</h4>
-            <p className="text-xs text-gray-500 mono uppercase tracking-wider mb-8">Source: N8N Closed Source Clone</p>
-            <div className="space-y-3">
-              <div className="flex justify-between text-[10px] mono uppercase text-white/40">
-                <span>Ingestion_Status</span>
-                <span>98%</span>
-              </div>
-              <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                <div className="h-full bg-indigo-500 w-[98%] shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
-              </div>
-            </div>
+            ))}
           </div>
 
-          {/* Asset 02 */}
-          <div className="p-10 bg-white/5 border border-white/10 rounded-3xl hover:border-indigo-500/50 transition-all group hover:-translate-y-2 duration-500 delay-100">
-            <div className="flex justify-between items-start mb-8">
-              <span className="mono text-[9px] text-white/30 uppercase tracking-widest group-hover:text-indigo-400 transition-colors">Asset_02 // CS_Automaton</span>
-              <ShieldCheck size={20} className="text-white/20 group-hover:text-indigo-400 transition-colors" />
-            </div>
-            <h4 className="text-2xl font-bold text-white mb-3 italic">B2B Support Ops</h4>
-            <p className="text-xs text-gray-500 mono uppercase tracking-wider mb-8">Source: Support Platform</p>
-            <div className="space-y-3">
-              <div className="flex justify-between text-[10px] mono uppercase text-white/40">
-                <span>Ingestion_Status</span>
-                <span>45%</span>
-              </div>
-              <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                <div className="h-full bg-indigo-500 w-[45%]"></div>
-              </div>
-            </div>
-          </div>
+          {/* New Section: Strategic Acquisitions Pipeline */}
+          <div className="mt-40 border-t border-white/10 pt-20">
+            <span className="mono text-[10px] text-indigo-400 uppercase tracking-[0.8em] font-black block mb-20 animate-pulse">Active_Acquisitions_Pipeline</span>
 
-          {/* Asset 03 */}
-          <div className="p-10 bg-white/5 border border-white/10 rounded-3xl hover:border-indigo-500/50 transition-all group hover:-translate-y-2 duration-500 delay-200">
-            <div className="flex justify-between items-start mb-8">
-              <span className="mono text-[9px] text-white/30 uppercase tracking-widest group-hover:text-indigo-400 transition-colors">Asset_03 // Product_Gen</span>
-              <Layout size={20} className="text-white/20 group-hover:text-indigo-400 transition-colors" />
-            </div>
-            <h4 className="text-2xl font-bold text-white mb-3 italic">AI Site Builder</h4>
-            <p className="text-xs text-gray-500 mono uppercase tracking-wider mb-8">Source: Lovable Clone</p>
-            <div className="space-y-3">
-              <div className="flex justify-between text-[10px] mono uppercase text-white/40">
-                <span>Ingestion_Status</span>
-                <span>12%</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+              {/* Asset 01 */}
+              <div className="p-10 bg-white/5 border border-white/10 rounded-3xl hover:border-indigo-500/50 transition-all group hover:-translate-y-2 duration-500">
+                <div className="flex justify-between items-start mb-8">
+                  <span className="mono text-[9px] text-white/30 uppercase tracking-widest group-hover:text-indigo-400 transition-colors">Asset_01 // Nodebase_Core</span>
+                  <Terminal size={20} className="text-white/20 group-hover:text-indigo-400 transition-colors" />
+                </div>
+                <h4 className="text-2xl font-bold text-white mb-3 italic">Workflow Engine</h4>
+                <p className="text-xs text-gray-500 mono uppercase tracking-wider mb-8">Source: N8N Closed Source Clone</p>
+                <div className="space-y-3">
+                  <div className="flex justify-between text-[10px] mono uppercase text-white/40">
+                    <span>Ingestion_Status</span>
+                    <span>98%</span>
+                  </div>
+                  <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-indigo-500 w-[98%] shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
+                  </div>
+                </div>
               </div>
-              <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-                <div className="h-full bg-indigo-500 w-[12%]"></div>
+
+              {/* Asset 02 */}
+              <div className="p-10 bg-white/5 border border-white/10 rounded-3xl hover:border-indigo-500/50 transition-all group hover:-translate-y-2 duration-500 delay-100">
+                <div className="flex justify-between items-start mb-8">
+                  <span className="mono text-[9px] text-white/30 uppercase tracking-widest group-hover:text-indigo-400 transition-colors">Asset_02 // CS_Automaton</span>
+                  <ShieldCheck size={20} className="text-white/20 group-hover:text-indigo-400 transition-colors" />
+                </div>
+                <h4 className="text-2xl font-bold text-white mb-3 italic">B2B Support Ops</h4>
+                <p className="text-xs text-gray-500 mono uppercase tracking-wider mb-8">Source: Support Platform</p>
+                <div className="space-y-3">
+                  <div className="flex justify-between text-[10px] mono uppercase text-white/40">
+                    <span>Ingestion_Status</span>
+                    <span>45%</span>
+                  </div>
+                  <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-indigo-500 w-[45%]"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Asset 03 */}
+              <div className="p-10 bg-white/5 border border-white/10 rounded-3xl hover:border-indigo-500/50 transition-all group hover:-translate-y-2 duration-500 delay-200">
+                <div className="flex justify-between items-start mb-8">
+                  <span className="mono text-[9px] text-white/30 uppercase tracking-widest group-hover:text-indigo-400 transition-colors">Asset_03 // Product_Gen</span>
+                  <Layout size={20} className="text-white/20 group-hover:text-indigo-400 transition-colors" />
+                </div>
+                <h4 className="text-2xl font-bold text-white mb-3 italic">AI Site Builder</h4>
+                <p className="text-xs text-gray-500 mono uppercase tracking-wider mb-8">Source: Lovable Clone</p>
+                <div className="space-y-3">
+                  <div className="flex justify-between text-[10px] mono uppercase text-white/40">
+                    <span>Ingestion_Status</span>
+                    <span>12%</span>
+                  </div>
+                  <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-full bg-indigo-500 w-[12%]"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-20 text-gray-500 italic text-lg max-w-2xl mx-auto font-light">
+              "We acquire legacy SaaS codebases not to sell them, but to <span className="text-white font-normal">cannibalize their logic</span> into the Nodebase engine."
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. PROOF OF WORK: ROI SIMULATOR */}
+      <section className="py-24 md:py-48 bg-black/40 backdrop-blur-sm border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-40 items-center">
+            <div className="space-y-12 md:space-y-20">
+              <div>
+                <span className="mono text-[10px] text-white/40 uppercase tracking-[0.8em] font-black block mb-10">Arbitrage_Measurement</span>
+                <h3 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-[0.85] italic text-silver">Feel the <br />Margins.</h3>
+              </div>
+              <p className="text-xl md:text-3xl text-gray-500 leading-tight font-light max-w-xl tracking-tight">
+                Empirical data shows the divergence between human agency scaling and compute-based autonomy. This is the structural arbitrage we are documenting.
+              </p>
+
+              <div className="p-8 md:p-16 bg-white/5 rounded-[3rem] border border-white/10 space-y-12 md:space-y-16 backdrop-blur-xl">
+                <div className="space-y-10">
+                  <div className="flex justify-between font-black mono text-[11px] uppercase tracking-[0.6em]">
+                    <span>Scaling_Units (Leads)</span>
+                    <span className="text-white text-3xl tracking-tighter italic">{leadCount.toLocaleString()}</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="100"
+                    max="50000"
+                    step="100"
+                    value={leadCount}
+                    onChange={(e) => setLeadCount(Number(e.target.value))}
+                  />
+                </div>
+              </div>
+
+              <ProofOfWorkInvoice className="absolute -right-8 top-0 transform rotate-6 hover:rotate-0 transition-transform duration-300 z-20" />
+
+            </div>
+
+            <div className="bg-black border border-white/10 p-8 md:p-12 rounded-[3rem] space-y-8 md:space-y-12 shadow-[0_50px_150px_rgba(0,0,0,0.6)] relative overflow-hidden backdrop-blur-3xl">
+              <div className="absolute top-0 right-0 p-16 opacity-[0.05]"><Binary size={400} /></div>
+
+              <div className="space-y-6">
+                <div className="flex justify-between items-end">
+                  <span className="mono text-[10px] text-white/30 uppercase font-black tracking-[0.5em]">Human_Agency_Cost (Linear)</span>
+                  <span className="font-bold text-2xl md:text-3xl text-red-500/50 tracking-tighter italic">${(leadCount * 18).toLocaleString()}</span>
+                </div>
+                <div className="w-full bg-white/5 h-3 rounded-full overflow-hidden">
+                  <div className="bg-red-700/60 h-full transition-all duration-700 ease-out shadow-[0_0_30px_rgba(220,38,38,0.2)]" style={{ width: `${Math.min(100, (leadCount / 50000) * 100)}%` }}></div>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex justify-between items-end">
+                  <span className="mono text-[10px] text-white/30 uppercase font-black tracking-[0.5em]">Lab_Compute_Cost (Logarithmic)</span>
+                  <span className="font-bold text-2xl md:text-3xl text-white tracking-tighter italic">${Math.round(800 + Math.log10(leadCount) * 600).toLocaleString()}</span>
+                </div>
+                <div className="w-full bg-white/5 h-3 rounded-full overflow-hidden">
+                  <div className="bg-white/60 h-full transition-all duration-700 ease-out shadow-[0_0_30px_rgba(255,255,255,0.2)]" style={{ width: `${(Math.log10(leadCount) / Math.log10(50000)) * 75}%` }}></div>
+                </div>
+              </div>
+
+              <div className="pt-10 border-t border-white/10 flex flex-wrap items-end justify-between gap-4">
+                <div className="min-w-0">
+                  <span className="block mono text-[10px] text-white/20 uppercase font-black tracking-[0.5em] mb-2">Profit_Arbitrage</span>
+                  <span className="text-3xl md:text-5xl font-bold text-white tracking-tighter italic drop-shadow-lg break-all">
+                    ${Math.max(0, (leadCount * 18) - (800 + Math.log10(leadCount) * 600)).toLocaleString()}
+                  </span>
+                </div>
+                <div className="flex flex-col items-end gap-2 shrink-0">
+                  <div className="px-5 py-2 bg-white text-black text-[10px] font-black uppercase tracking-[0.4em] rounded-xl shadow-2xl whitespace-nowrap">Software_Margins</div>
+                  <div className="px-5 py-2 border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.4em] rounded-xl whitespace-nowrap">Service_Arbitrage</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <p className="mt-20 text-gray-500 italic text-lg max-w-2xl mx-auto font-light">
-          "We acquire legacy SaaS codebases not to sell them, but to <span className="text-white font-normal">cannibalize their logic</span> into the Nodebase engine."
-        </p>
-      </div>
-    </div>
-      </section >
-
-  {/* 6. PROOF OF WORK: ROI SIMULATOR */ }
-  < section className = "py-24 md:py-48 bg-black/40 backdrop-blur-sm border-y border-white/5" >
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-40 items-center">
-        <div className="space-y-12 md:space-y-20">
-          <div>
-            <span className="mono text-[10px] text-white/40 uppercase tracking-[0.8em] font-black block mb-10">Arbitrage_Measurement</span>
-            <h3 className="text-5xl md:text-7xl font-bold tracking-tighter uppercase leading-[0.85] italic text-silver">Feel the <br />Margins.</h3>
+      {/* 7. FIELD NOTES: BROADCASTING THE EXPERIMENT */}
+      <section className="py-48">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-40 gap-16">
+            <div className="max-w-2xl">
+              <span className="mono text-[10px] text-white/40 uppercase tracking-[0.8em] font-black block mb-10">Public_Scholarship</span>
+              <h3 className="text-6xl font-bold uppercase tracking-tighter text-silver leading-[0.85] italic">Broadcasting <br />the Experiment.</h3>
+            </div>
+            <p className="text-gray-500 text-3xl max-w-md border-l-2 border-white/10 pl-16 font-light leading-tight tracking-tighter">
+              A Research Lab must publish to influence the standard. We document the messy reality of the <span className="text-white">Jagged Frontier</span>.
+            </p>
           </div>
-          <p className="text-xl md:text-3xl text-gray-500 leading-tight font-light max-w-xl tracking-tight">
-            Empirical data shows the divergence between human agency scaling and compute-based autonomy. This is the structural arbitrage we are documenting.
-          </p>
 
-          <div className="p-8 md:p-16 bg-white/5 rounded-[3rem] border border-white/10 space-y-12 md:space-y-16 backdrop-blur-xl">
-            <div className="space-y-10">
-              <div className="flex justify-between font-black mono text-[11px] uppercase tracking-[0.6em]">
-                <span>Scaling_Units (Leads)</span>
-                <span className="text-white text-3xl tracking-tighter italic">{leadCount.toLocaleString()}</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
+            {[
+              { type: "Empirical_Note", title: "The Day the Router Failed: Lessons from the Jagged Frontier", icon: BookOpen, date: "Q4_2024" },
+              { type: "Technical_SOP", title: "Open Sourcing the Governance Node and Audit Logic", icon: Terminal, date: "Q4_2024" },
+              { type: "Case_Study", title: "Bicycle for the SME: Operational Proof of Agentic ROI", icon: Search, date: "Q1_2025" }
+            ].map((n, i) => (
+              <div key={i} className="group cursor-pointer flex flex-col h-full bg-white/5 p-8 md:p-16 rounded-[3.5rem] border border-white/5 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-700 hover:shadow-2xl">
+                <div className="aspect-square bg-black border border-white/10 rounded-3xl mb-16 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-all duration-700">
+                  <n.icon size={80} className="text-white/10 group-hover:text-white transition-all duration-700 opacity-40 group-hover:opacity-100" />
+                  <div className="absolute top-10 right-10 mono text-[10px] text-white/30 font-black tracking-widest">{n.date}</div>
+                </div>
+                <span className="mono text-[10px] text-indigo-400 uppercase font-black block mb-8 tracking-[0.6em]">{n.type}</span>
+                <h4 className="text-4xl font-bold leading-[1.05] group-hover:text-silver transition-all pr-12 tracking-tighter italic">{n.title}</h4>
+                <div className="mt-auto pt-12 flex items-center gap-4">
+                  <div className="w-12 h-[1.5px] bg-white/20 group-hover:w-full transition-all duration-1000"></div>
+                  <ArrowUpRight size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
               </div>
-              <input
-                type="range"
-                min="100"
-                max="50000"
-                step="100"
-                value={leadCount}
-                onChange={(e) => setLeadCount(Number(e.target.value))}
-              />
-            </div>
-          </div>
-
-          <ProofOfWorkInvoice className="absolute -right-8 top-0 transform rotate-6 hover:rotate-0 transition-transform duration-300 z-20" />
-
-        </div>
-
-        <div className="bg-black border border-white/10 p-8 md:p-12 rounded-[3rem] space-y-8 md:space-y-12 shadow-[0_50px_150px_rgba(0,0,0,0.6)] relative overflow-hidden backdrop-blur-3xl">
-          <div className="absolute top-0 right-0 p-16 opacity-[0.05]"><Binary size={400} /></div>
-
-          <div className="space-y-6">
-            <div className="flex justify-between items-end">
-              <span className="mono text-[10px] text-white/30 uppercase font-black tracking-[0.5em]">Human_Agency_Cost (Linear)</span>
-              <span className="font-bold text-2xl md:text-3xl text-red-500/50 tracking-tighter italic">${(leadCount * 18).toLocaleString()}</span>
-            </div>
-            <div className="w-full bg-white/5 h-3 rounded-full overflow-hidden">
-              <div className="bg-red-700/60 h-full transition-all duration-700 ease-out shadow-[0_0_30px_rgba(220,38,38,0.2)]" style={{ width: `${Math.min(100, (leadCount / 50000) * 100)}%` }}></div>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            <div className="flex justify-between items-end">
-              <span className="mono text-[10px] text-white/30 uppercase font-black tracking-[0.5em]">Lab_Compute_Cost (Logarithmic)</span>
-              <span className="font-bold text-2xl md:text-3xl text-white tracking-tighter italic">${Math.round(800 + Math.log10(leadCount) * 600).toLocaleString()}</span>
-            </div>
-            <div className="w-full bg-white/5 h-3 rounded-full overflow-hidden">
-              <div className="bg-white/60 h-full transition-all duration-700 ease-out shadow-[0_0_30px_rgba(255,255,255,0.2)]" style={{ width: `${(Math.log10(leadCount) / Math.log10(50000)) * 75}%` }}></div>
-            </div>
-          </div>
-
-          <div className="pt-10 border-t border-white/10 flex flex-wrap items-end justify-between gap-4">
-            <div className="min-w-0">
-              <span className="block mono text-[10px] text-white/20 uppercase font-black tracking-[0.5em] mb-2">Profit_Arbitrage</span>
-              <span className="text-3xl md:text-5xl font-bold text-white tracking-tighter italic drop-shadow-lg break-all">
-                ${Math.max(0, (leadCount * 18) - (800 + Math.log10(leadCount) * 600)).toLocaleString()}
-              </span>
-            </div>
-            <div className="flex flex-col items-end gap-2 shrink-0">
-              <div className="px-5 py-2 bg-white text-black text-[10px] font-black uppercase tracking-[0.4em] rounded-xl shadow-2xl whitespace-nowrap">Software_Margins</div>
-              <div className="px-5 py-2 border border-white/20 text-white text-[10px] font-black uppercase tracking-[0.4em] rounded-xl whitespace-nowrap">Service_Arbitrage</div>
-            </div>
+            ))}
           </div>
         </div>
-      </div>
-    </div>
-      </section >
+      </section>
 
-  {/* 7. FIELD NOTES: BROADCASTING THE EXPERIMENT */ }
-  < section className = "py-48" >
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="flex flex-col lg:flex-row justify-between items-end mb-40 gap-16">
-        <div className="max-w-2xl">
-          <span className="mono text-[10px] text-white/40 uppercase tracking-[0.8em] font-black block mb-10">Public_Scholarship</span>
-          <h3 className="text-6xl font-bold uppercase tracking-tighter text-silver leading-[0.85] italic">Broadcasting <br />the Experiment.</h3>
-        </div>
-        <p className="text-gray-500 text-3xl max-w-md border-l-2 border-white/10 pl-16 font-light leading-tight tracking-tighter">
-          A Research Lab must publish to influence the standard. We document the messy reality of the <span className="text-white">Jagged Frontier</span>.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
-        {[
-          { type: "Empirical_Note", title: "The Day the Router Failed: Lessons from the Jagged Frontier", icon: BookOpen, date: "Q4_2024" },
-          { type: "Technical_SOP", title: "Open Sourcing the Governance Node and Audit Logic", icon: Terminal, date: "Q4_2024" },
-          { type: "Case_Study", title: "Bicycle for the SME: Operational Proof of Agentic ROI", icon: Search, date: "Q1_2025" }
-        ].map((n, i) => (
-          <div key={i} className="group cursor-pointer flex flex-col h-full bg-white/5 p-8 md:p-16 rounded-[3.5rem] border border-white/5 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-700 hover:shadow-2xl">
-            <div className="aspect-square bg-black border border-white/10 rounded-3xl mb-16 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-all duration-700">
-              <n.icon size={80} className="text-white/10 group-hover:text-white transition-all duration-700 opacity-40 group-hover:opacity-100" />
-              <div className="absolute top-10 right-10 mono text-[10px] text-white/30 font-black tracking-widest">{n.date}</div>
-            </div>
-            <span className="mono text-[10px] text-indigo-400 uppercase font-black block mb-8 tracking-[0.6em]">{n.type}</span>
-            <h4 className="text-4xl font-bold leading-[1.05] group-hover:text-silver transition-all pr-12 tracking-tighter italic">{n.title}</h4>
-            <div className="mt-auto pt-12 flex items-center gap-4">
-              <div className="w-12 h-[1.5px] bg-white/20 group-hover:w-full transition-all duration-1000"></div>
-              <ArrowUpRight size={20} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-      </section >
-
-  {/* 8. THE COALITION: THE ASK */ }
-  < section className = "py-72 bg-white text-black relative overflow-hidden group" >
+      {/* 8. THE COALITION: THE ASK */}
+      <section className="py-72 bg-white text-black relative overflow-hidden group">
         <div className="absolute inset-0 opacity-[0.08] pointer-events-none flex items-center justify-center">
           <Binary size={1200} className="text-black group-hover:rotate-12 group-hover:scale-110 transition-all duration-1500" />
         </div>
@@ -591,60 +589,60 @@ const Dashboard: React.FC = () => {
             Request Dossier
           </button>
         </div>
-      </section >
+      </section>
 
-  {/* FOOTER */ }
-  < footer className = "py-40 bg-black border-t border-white/5" >
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="flex flex-col lg:flex-row justify-between items-start gap-32 mb-40">
-        <div className="flex flex-col gap-16">
-          <div className="flex items-center gap-8">
-            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-2xl">
-              <Zap size={30} className="text-black fill-black" />
+      {/* FOOTER */}
+      <footer className="py-40 bg-black border-t border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-32 mb-40">
+            <div className="flex flex-col gap-16">
+              <div className="flex items-center gap-8">
+                <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-2xl">
+                  <Zap size={30} className="text-black fill-black" />
+                </div>
+                <span className="font-bold tracking-tighter text-4xl uppercase italic">Open Research Lab</span>
+              </div>
+              <p className="text-gray-500 text-base mono uppercase tracking-[0.6em] font-black max-w-sm leading-relaxed italic">
+                Bridging the Gap between <br />Theory and Execution.
+              </p>
             </div>
-            <span className="font-bold tracking-tighter text-4xl uppercase italic">Open Research Lab</span>
-          </div>
-          <p className="text-gray-500 text-base mono uppercase tracking-[0.6em] font-black max-w-sm leading-relaxed italic">
-            Bridging the Gap between <br />Theory and Execution.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-32 lg:gap-56">
-          <div className="space-y-10">
-            <h5 className="mono text-[10px] text-white/30 uppercase font-black tracking-[0.6em]">PLATFORM</h5>
-            <ul className="space-y-8 text-xs font-black uppercase tracking-[0.3em] text-gray-500">
-              <li><a href="#" className="hover:text-white transition-colors">OS_Architecture</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Operational_SOPs</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Governance_Nodes</a></li>
-            </ul>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-32 lg:gap-56">
+              <div className="space-y-10">
+                <h5 className="mono text-[10px] text-white/30 uppercase font-black tracking-[0.6em]">PLATFORM</h5>
+                <ul className="space-y-8 text-xs font-black uppercase tracking-[0.3em] text-gray-500">
+                  <li><a href="#" className="hover:text-white transition-colors">OS_Architecture</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Operational_SOPs</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Governance_Nodes</a></li>
+                </ul>
+              </div>
+              <div className="space-y-10">
+                <h5 className="mono text-[10px] text-white/30 uppercase font-black tracking-[0.6em]">ACADEMIC</h5>
+                <ul className="space-y-8 text-xs font-black uppercase tracking-[0.3em] text-gray-500">
+                  <li><a href="#" className="hover:text-white transition-colors">Grant_Access</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">PI_Inquiries</a></li>
+                  <li><a href="#" className="hover:text-white transition-colors">Empirical_Logs</a></li>
+                </ul>
+              </div>
+              <div className="hidden md:block space-y-10">
+                <h5 className="mono text-[10px] text-white/30 uppercase font-black tracking-[0.6em]">NETWORK</h5>
+                <div className="flex items-center gap-5 group cursor-default">
+                  <div className="w-3.5 h-3.5 rounded-full bg-green-500 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] transition-all animate-pulse"></div>
+                  <span className="text-[11px] mono font-black text-gray-500 uppercase tracking-[0.2em] italic">Grid_Active // Paris-Oxford</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="space-y-10">
-            <h5 className="mono text-[10px] text-white/30 uppercase font-black tracking-[0.6em]">ACADEMIC</h5>
-            <ul className="space-y-8 text-xs font-black uppercase tracking-[0.3em] text-gray-500">
-              <li><a href="#" className="hover:text-white transition-colors">Grant_Access</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">PI_Inquiries</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Empirical_Logs</a></li>
-            </ul>
-          </div>
-          <div className="hidden md:block space-y-10">
-            <h5 className="mono text-[10px] text-white/30 uppercase font-black tracking-[0.6em]">NETWORK</h5>
-            <div className="flex items-center gap-5 group cursor-default">
-              <div className="w-3.5 h-3.5 rounded-full bg-green-500 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.8)] transition-all animate-pulse"></div>
-              <span className="text-[11px] mono font-black text-gray-500 uppercase tracking-[0.2em] italic">Grid_Active // Paris-Oxford</span>
+
+          <div className="pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-16">
+            <span className="text-[11px] mono text-white/10 uppercase tracking-[1.0em] italic font-black">©2024 OPEN_RESEARCH_LAB // POST_LABOR_OS_V1.5</span>
+            <div className="flex gap-20">
+              <a href="#" className="text-white/10 hover:text-white transition-all transform hover:scale-125"><ArrowUpRight size={28} /></a>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-16">
-        <span className="text-[11px] mono text-white/10 uppercase tracking-[1.0em] italic font-black">©2024 OPEN_RESEARCH_LAB // POST_LABOR_OS_V1.5</span>
-        <div className="flex gap-20">
-          <a href="#" className="text-white/10 hover:text-white transition-all transform hover:scale-125"><ArrowUpRight size={28} /></a>
-        </div>
-      </div>
+      </footer>
     </div>
-      </footer >
-    </div >
   );
 };
 
